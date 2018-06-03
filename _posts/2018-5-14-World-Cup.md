@@ -31,7 +31,7 @@ I had a lot of difficulty finding a dataset that wold give me not only internati
 
 After searching extensively for good datasets, I decided to stick to a neat [dataset from Kaggle](https://www.kaggle.com/martj42/international-football-results-from-1872-to-2017) containing about 40,000 international football matches' results. It would not have all the features I wanted, but it would be a good start.
 
-![wc1](https://brunoaks.github.io/images/wc1.JPG)
+![wc1](https://raw.githubusercontent.com/brunoaks/blog/master/images/wc1.JPG)
 
 ### 4. Data Mining and Cleaning
 After playing around with the data, I decided I would skim down the dataset to its bare essentials: just the name of the teams and the outcome of the match. This way, the model would not be confused by other variables that could potentially harm our accuracy, like match location (there would be an winning inclination to teams who won in matches played in Russia) or championship (there would be bias against games other than World Cup matches).
@@ -88,7 +88,7 @@ df_teams30.loc[df_teams30.winning_team == df_teams30.away_team, 'winning_team']=
 If we call `df_teams30.head()` we can assert that the table is in a format that suits us:
 
 
-![wc2](https://brunoaks.github.io/images/wc2.JPG)
+![wc2](https://raw.githubusercontent.com/brunoaks/blog/master/images/wc2.JPG)
 
 Now, before we initialize a Machine Learning model, I just have to first do some one-hot encoding and then split the dataset in train/test chunks. 
 
@@ -185,7 +185,7 @@ sns.barplot(x='Accuracy', y='Classifier', data=log, color="b")
 ```
 We can observe that the Logistic Regression stands out as the classifier with the best accuracy out of all. 
 
-![wc3](https://brunoaks.github.io/images/wc3.png)
+![wc3](https://raw.githubusercontent.com/brunoaks/blog/master/images/wc3.png)
 
 That way, I decided to keep the Logistic Regression model and use it for the rest of the project as my main classifier.
 
@@ -292,11 +292,11 @@ I'll put here the results for the knockout stage here, just for curiosity's sake
 
 **Round of 16**
 
-![wc5](https://brunoaks.github.io/images/wc5.jpg)
+![wc5](https://raw.githubusercontent.com/brunoaks/blog/master/images/wc5.jpg)
 
 **Quarter-finals, Semi-Finals and Finals**
 
-![wc6](https://brunoaks.github.io/images/wc6.jpg)
+![wc6](https://raw.githubusercontent.com/brunoaks/blog/master/images/wc6.jpg)
 
 Germany's definitely the favourite for this World Cup!
 
