@@ -292,11 +292,11 @@ I'll put here the results for the knockout stage here, just for curiosity's sake
 
 **Round of 16**
 
-![wc5](https://raw.githubusercontent.com/brunoaks/blog/master/images/wc5.jpg)
+![wc5](https://raw.githubusercontent.com/brunoaks/blog/master/images/wc5.JPG)
 
 **Quarter-finals, Semi-Finals and Finals**
 
-![wc6](https://raw.githubusercontent.com/brunoaks/blog/master/images/wc6.jpg)
+![wc6](https://raw.githubusercontent.com/brunoaks/blog/master/images/wc6.JPG)
 
 Germany's definitely the favourite for this World Cup!
 
