@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Building a webscraper with Python and Beautiful Soup
+title: Building a webscraper with Python and Beautiful Soup from scratch
 ---
 
-The task of searching for the perfect grad school in the US is a daunting one. With so many different rankings and variables to consider, one can spend a tremendous amount of time accessing each school's website and gathering information.
+The task of searching for the perfect grad school in the US is a daunting one. With so many different rankings and variables to consider for application, such as faculty size, tuition costs and location, one can easily spend a tremendous amount of time accessing each school's website and gathering information by hand.
 
 I figured this task would be a perfect training ground to build my first web scraper. By using a centralized source of information about different schools - such as a universites' ranking website - I would be able to quickly scrape for data which would otherwise take ages to collect, if I were to copy and paste each bit of information into an Excel spreadsheet.
 
-I decided to stick to the USNews ranking for Graduate Schools in Engineering (because that's what fits me the most, if I ever go to grad school). As for tools, I used the [Requests](http://docs.python-requests.org/en/master/) library to get each page's HTML, and [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) for pulling data out of the HTML files. Then, I would write all the desired data into a .csv file.
+I decided to stick to the [USNews](https://www.usnews.com/best-graduate-schools/top-engineering-schools/eng-rankings) ranking for Graduate Schools in Engineering (because that's what fits me the most, if I ever go to grad school). As for tools, I used the [Requests](http://docs.python-requests.org/en/master/) library to get each page's HTML, and [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) for pulling data out of the HTML files. Then, I would write all the desired data into a .csv file.
 
 Check out my [Github repo](https://github.com/brunoaks/the-masters-algorithm) for more details on the source code.
 
@@ -16,15 +16,13 @@ Before setting off to code, I needed a web scraping strategy. This included visi
 
 After analyzing the way the website is structured, I realized there was very limited info on the ranking page itself, so I would also need access each school's page inside USNews in order to get all the data I wanted.
 
-<figure>
-  <img src="{{http://brunokoba.com/blog/Webscraper/}}/images/scrape1.JPG" alt="scrape1"/>
-  <figcaption>Basic structure of the ranking page.</figcaption>
-</figure>
+This is the structure of the ranking page:
 
-<figure>
-  <img src="{{http://brunokoba.com/blog/Webscraper/}}/images/scrape2.JPG" alt="scrape2"/>
-  <figcaption>Each school's page inside USNews.</figcaption>
-</figure>
+![scrape1](https://raw.githubusercontent.com/brunoaks/blog/master/images/scrape1.JPG)
+
+And this is an overview of each engineering school's page:
+
+![scrape2](https://raw.githubusercontent.com/brunoaks/blog/master/images/scrape2.JPG)
 
 Since you can access each school's page from the original ranking, it would be a fairly easy task of just scraping the desired "href" tag in the ranking page's HTML and using it to generate another request for a new page. We would then iterate this process for every school we wanted.
 
@@ -55,7 +53,7 @@ For each element in feature list:
 ### 2. Code away!
 The code itself is very straightforward. The Requests library is extremely simple to use, and Beautiful Soup also makes it really easy to parse HTML files once you get the hang of it. After a while, it only becomes a matter of identifying the information you want inside each HTML file and choosing the appropriate command following the Beautiful Soup library.
 
-You can check out the code for the script below.
+You can check out the full code for the script below.
 
 ```python
 from urllib.request import Request
@@ -182,7 +180,9 @@ df = pd.read_csv('database.csv')
 df.head()
 ```
 
-### 3.Final thoughts
+### 3. Final thoughts
+Running the script overwrites the .csv file called `database` with updated information. Unfortunately, not all desired variables were obtained, since USNews doesn't provide the same information for all schools (for instance, the "Applications deadline" variable was probably the one with the most "N/A" entries). But overall, the scraper seems to work well!
+
 I actually had more fun with this little web scraping project than I initially thought. As one friend of mine told me, it feels like a genuine little puzzle. You already have an idea of what you need to collect - but you have to find that data hidden in layers of `div` tags and think of the optimal way of extracting those bits of information.
 
 I really suggest you try it someday. Think of something that might actually be useful for you - as this grad school database is for me - and try to automate the process of data collection. You might save yourself a lot of dumb, repetitive work and learn a lot in the process.
