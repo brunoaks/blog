@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building a webscraper with Python and Beautiful Soup from scratch
+title: Building a web scraper with Python and Beautiful Soup from scratch
 ---
 
 The task of searching for the perfect grad school in the US is a daunting one. With so many different rankings and variables to consider for application, such as faculty size, tuition costs and location, one can easily spend a tremendous amount of time accessing each school's website and gathering information by hand.
@@ -53,7 +53,7 @@ For each element in feature list:
 ### 2. Code away!
 The code itself is very straightforward. The Requests library is extremely simple to use, and Beautiful Soup also makes it really easy to parse HTML files once you get the hang of it. After a while, it only becomes a matter of identifying the information you want inside each HTML file and choosing the appropriate command following the Beautiful Soup library.
 
-You can check out the full code for the script below.
+You can check out the full code in Python 3 for the script below.
 
 ```python
 from urllib.request import Request
