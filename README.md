@@ -1,4 +1,4 @@
-### Personal Data Science and Machine Learning blog
+### Personal Tech & VC blog
 
 Thanks for visiting!
 
